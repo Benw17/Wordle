@@ -1,0 +1,64 @@
+body {
+    background-color: grey;
+    margin: 0;
+}
+
+.tile {
+    height: 80px;
+    width: 80px;
+    border: none;
+    margin: 2px;
+    display: inline-block;
+    font-size: 4rem;
+    background-color: lightgrey;
+    color: black;
+    opacity: 80%;
+    border-radius: 10px;
+    vertical-align: top;
+}
+
+.tile-row {
+    text-align: center;
+}
+
+.wrapper {
+    width: 60vw;
+    height: 100vh;
+    margin: auto;
+    background-color: #555;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+
+}
+
+.keyboard {
+    text-align: center;
+    padding-top: 50px;
+
+}
+
+.keyboard-row button {
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+}
+
+.keyboard-row button:hover {
+    background-color: grey;
+    cursor: pointer;
+}
+
+#user-buttons {
+    margin-top: 40px;
+}
+
+#user-buttons button {
+    height: 5vh;
+    width: 10vw;
+    border-radius: 10px;
+}
+
+#user-buttons button:hover {
+    background-color: gray;
+    cursor: pointer;
+}

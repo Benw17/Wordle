@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang='en-US'>
+    <head>
+        <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+        <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+        <script>
+            document.addEventListener("keydown", KeyPress);
+
+            document.addEventListener('DOMContentLoaded', function() {
+
+                document.getElementById('green-button').addEventListener('click', Green);
+                document.getElementById('yellow-button').addEventListener('click', Yellow);
+                document.getElementById('reset-button').addEventListener('click', Reset)
+            } )
+
+        </script>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <form>
+                <div class="tile-row">
+                    <div id="00" class="tile"><input hidden id="000" name="00"></div>
+                    <div id="01" class="tile"></div>
+                    <div id="02" class="tile"></div>
+                    <div id="03" class="tile"></div>
+                    <div id="04" class="tile"></div>
+                </div>
+            </form>
+            <div class="tile-row">
+                <div id="10"class="tile"></div>
+                <div id="11" class="tile"></div>
+                <div id="12" class="tile"></div>
+                <div id="13" class="tile"></div>
+                <div id="14" class="tile"></div>
+            </div>
+            <div class="tile-row">
+                <div id="20" class="tile"></div>
+                <div id="21" class="tile"></div>
+                <div id="22" class="tile"></div>
+                <div id="23" class="tile"></div>
+                <div id="24" class="tile"></div>
+            </div>
+            <div class="tile-row">
+                <div id="30" class="tile"></div>
+                <div id="31" class="tile"></div>
+                <div id="32" class="tile"></div>
+                <div id="33" class="tile"></div>
+                <div id="34" class="tile"></div>
+            </div>
+            <div class="tile-row">
+                <div id="40" class="tile"></div>
+                <div id="41" class="tile"></div>
+                <div id="42" class="tile"></div>
+                <div id="43" class="tile"></div>
+                <div id="44" class="tile"></div>
+            </div>
+            <div class="tile-row">
+                <div id="50" class="tile"></div>
+                <div id="51" class="tile"></div>
+                <div id="52" class="tile"></div>
+                <div id="53" class="tile"></div>
+                <div id="54" class="tile"></div>
+            </div>
+            <div class="keyboard">
+                <div class="keyboard-row">
+                    <button>Q</button>
+                    <button>W</button>
+                    <button>E</button>
+                    <button>R</button>
+                    <button>T</button>
+                    <button>Y</button>
+                    <button>U</button>
+                    <button>I</button>
+                    <button>O</button>
+                    <button>P</button>
+                </div>
+                <div class="keyboard-row">
+                    <button>A</button>
+                    <button>S</button>
+                    <button>D</button>
+                    <button>F</button>
+                    <button>G</button>
+                    <button>H</button>
+                    <button>J</button>
+                    <button>K</button>
+                    <button>L</button>
+                </div>
+                <div class="keyboard-row">
+                    <button>Z</button>
+                    <button>X</button>
+                    <button>C</button>
+                    <button>V</button>
+                    <button>B</button>
+                    <button>N</button>
+                    <button>M</button>
+                </div>
+                <div id="user-buttons">
+                    <button id="green-button">Green</button>
+                    <button id="yellow-button">Yellow</button>
+                    <button id="reset-button">Reset</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
