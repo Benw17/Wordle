@@ -1,15 +1,42 @@
 var row = 0;
 const tiles = ['0', '1', '2', '3', '4']
+var attempts = {}
+var colors = {}
 
 function KeyPress(event) {
     let key = event.key;
 
     if (key === "Enter" && document.getElementById(row + tiles[4]).innerText !== '') {
 
-        document.getElementById('000').value = document.getElementById('00').innerText;
-        
+        for (let i = 0; i < tiles.length; i++) {
+            attempts[row + tiles[i]] = document.getElementById(row + tiles[i]).innerText;
+            colors[row + tiles[i]] = document.getElementById(row + tiles[i]).style.backgroundColor;
+        }
         row++;
-        return;
+
+        fetch('/', {
+
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify([attempts, colors]),
+            })
+        .then(response => response.json())
+        .then(data => {
+
+            list = data['received_data'];
+            const ul_list = document.getElementById('suggest');
+
+            for (let i = 0; i < list.length; i++) {
+                const list_item = document.createElement('li');
+                list_item.textContent = list[i];
+                ul_list.appendChild(list_item);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        })
     }
 
     if (key === "Backspace") {
@@ -28,6 +55,7 @@ function KeyPress(event) {
     }
 
     else {
+
         if (key.length > 1) {
             return;
         }
@@ -54,48 +82,31 @@ function KeyPress(event) {
 
 function Green() {
 
-    for (let i = 0; i < tiles.length; i++) {
+    for (let i = 5; i >= 0; i--) {
         const cell = document.getElementById(row + tiles[i]);
 
-        if (!cell.innerText) {
-
-            document.getElementById(row + tiles[i - 1]).style.backgroundColor = "green";
-            return;
+        if (!cell) {
+            continue;
         }
 
-        if (i === tiles.length - 1) {
-
-            cell.style.backgroundColor = "green";
+        if (cell.innerText) {
+            cell.style.backgroundColor = 'Green';
             return;
         }
     }
 }
 
 function Yellow() {
-    for (let i = 0; i < tiles.length; i++) {
+    for (let i = 5; i >= 0; i--) {
         const cell = document.getElementById(row + tiles[i]);
 
-        if (!cell.innerText) {
-
-            document.getElementById(row + tiles[i - 1]).style.backgroundColor = "yellow";
-            return;
+        if (!cell) {
+            continue;
         }
 
-        if (i === tiles.length - 1) {
-            cell.style.backgroundColor = "yellow";
+        if (cell.innerText) {
+            cell.style.backgroundColor = 'Yellow';
             return;
-        }
-    }
-}
-
-function Reset() {
-    for (let i = 0; i < tiles.length; i++) {
-        for (let j = 0; j < tiles.length; j++) {
-            const cell = document.getElementById(tiles[i] + tiles[j]);
-
-            cell.innerText = '';
-            cell.style.backgroundColor = 'lightgrey';
-            row = 0;
         }
     }
 }

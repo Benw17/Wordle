@@ -24,7 +24,6 @@ body {
 .wrapper {
     width: 60vw;
     height: 100vh;
-    margin: auto;
     background-color: #555;
     border-left: 3px solid black;
     border-right: 3px solid black;
@@ -61,4 +60,23 @@ body {
 #user-buttons button:hover {
     background-color: gray;
     cursor: pointer;
+}
+
+#user-buttons a {
+    text-decoration: none;
+    color: black;
+}
+
+.right-wrapper {
+    width: 25vw;
+    height: 100vh;
+}
+
+.right-wrapper p {
+    width: 25vw;
+    display: inline-flex;
+}
+
+.page-wrap {
+    display: flex;
 }

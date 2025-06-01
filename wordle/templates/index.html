@@ -10,23 +10,21 @@
 
                 document.getElementById('green-button').addEventListener('click', Green);
                 document.getElementById('yellow-button').addEventListener('click', Yellow);
-                document.getElementById('reset-button').addEventListener('click', Reset)
             } )
 
         </script>
     </head>
 
     <body>
+        <div class="page-wrap">
         <div class="wrapper">
-            <form>
-                <div class="tile-row">
-                    <div id="00" class="tile"><input hidden id="000" name="00"></div>
-                    <div id="01" class="tile"></div>
-                    <div id="02" class="tile"></div>
-                    <div id="03" class="tile"></div>
-                    <div id="04" class="tile"></div>
-                </div>
-            </form>
+            <div class="tile-row">
+                <div id="00" class="tile"></div>
+                <div id="01" class="tile"></div>
+                <div id="02" class="tile"></div>
+                <div id="03" class="tile"></div>
+                <div id="04" class="tile"></div>
+            </div>
             <div class="tile-row">
                 <div id="10"class="tile"></div>
                 <div id="11" class="tile"></div>
@@ -98,9 +96,15 @@
                 <div id="user-buttons">
                     <button id="green-button">Green</button>
                     <button id="yellow-button">Yellow</button>
-                    <button id="reset-button">Reset</button>
+                    <button><a href="/">Reset</a></button>
                 </div>
             </div>
         </div>
+        <div class="right-wrapper">
+            <ul id="suggest">
+
+            </ul>
+        </div>
+    </div>
     </body>
 </html>
