@@ -8,6 +8,12 @@ function KeyPress(event) {
 
     if (key === "Enter" && document.getElementById(row + tiles[4]).innerText !== '') {
 
+        lists = document.getElementById('suggest');
+
+        while (lists.children.length != 0) {
+            lists.children[0].remove();
+        }
+
         for (let i = 0; i < tiles.length; i++) {
             attempts[row + tiles[i]] = document.getElementById(row + tiles[i]).innerText;
             colors[row + tiles[i]] = document.getElementById(row + tiles[i]).style.backgroundColor;
